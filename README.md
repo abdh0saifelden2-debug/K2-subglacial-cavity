@@ -140,3 +140,8 @@ The pristine monorepo was snapshotted **before** any edit:
 and paper outline are deliberately **not** copied here — they live only in that
 archive. [`AUDIT.md`](AUDIT.md) records the full split audit: every vendored
 file, every edit, and the AST verification result.
+
+echo "done" 2>&1 | tail -1
+
+## TODO (future)
+- (6) A-posteriori closed-loop LES benchmark (projected-FDT vs Smagorinsky vs filtered DNS)
