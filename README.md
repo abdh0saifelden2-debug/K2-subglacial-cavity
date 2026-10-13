@@ -118,7 +118,7 @@ python3 -m venv .venv && . .venv/bin/activate
 pip install -r requirements.txt
 python run_subglacial.py --bed real --out-dir figures
 python validation/external/run_rtn_bedmap2.py --stride 3 --phi 0.9
-python -m pytest            # 400 tests
+python -m pytest            # 394 passed, 6 skipped
 ```
 
 ## Provenance
