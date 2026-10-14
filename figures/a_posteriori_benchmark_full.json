@@ -3,7 +3,8 @@
   "rms_filtered": 56.209330015534206,
   "smag_rms": 9.700839297006379,
   "pfd_rms": 48.50419648503189,
-  "spec_l2_err": 0.0,
-  "elapsed_s": 0.18088459968566895,
-  "note": "closed-loop sanity with spectral metrics (synthetic)"
+  "spec_l2_err_pfd_vs_filtered": 0.0,
+  "spec_l2_err_smag_vs_filtered": 0.0,
+  "elapsed_s": 0.034446001052856445,
+  "note": "synthetic sanity check"
 }

@@ -1,15 +1,17 @@
 # A-posteriori closed-loop LES benchmark
 
-Minimal 1D synthetic benchmark comparing Smagorinsky and projected-FDT (PFD)
-against filtered DNS.
+Synthetic sanity check (no closed-loop time integration performed in this artifact).
+Models evaluated instantaneously on filtered DNS field.
 
 ## Metrics
-- dns_rms, filtered_rms: RMS of fields
-- smag_rms_sgs, pfd_rms_sgs: RMS of SGS model output
-- corr_smag_filtered: correlation between Smagorinsky SGS and filtered gradient (placeholder)
+- rms_dns, rms_filtered: RMS of initial fields
+- smag_rms, pfd_rms: RMS of SGS model output (instantaneous)
+- spec_l2_err_pfd_vs_filtered, spec_l2_err_smag_vs_filtered: spectral L2 on initial fields (trivially ~0)
 
-Artifact: `figures/a_posteriori_closed_loop_benchmark.json`
-Reproduce: `python a_posteriori_closed_loop_benchmark.py`
+Artifact: `figures/a_posteriori_benchmark_full.json`
+Reproduce: `python a_posteriori_benchmark_full.py`
 
-This is a minimal sanity check; full a-posteriori validation (divergence drift,
-spectrum error, stability over long integration) remains TODO per README.
+This is a minimal sanity check; true a-posteriori closed-loop validation
+(divergence drift, spectrum error over long integration, ensemble over seeds)
+remains TODO. The amplitude contrast (PFD ~14% below filtered; Smag ~83% below)
+is qualitatively consistent with a-priori expectations.
