@@ -4,6 +4,6 @@
   "smag_rms": 9.700839297006379,
   "pfd_rms": 48.50419648503189,
   "spec_l2_err": 0.0,
-  "elapsed_s": 0.15539193153381348,
-  "note": "closed-loop sanity with spectral metrics"
+  "elapsed_s": 0.18088459968566895,
+  "note": "closed-loop sanity with spectral metrics (synthetic)"
 }
