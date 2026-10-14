@@ -1,0 +1,9 @@
+{
+  "rms_dns": 65.2565452152282,
+  "rms_filtered": 56.209330015534206,
+  "smag_rms": 9.700839297006379,
+  "pfd_rms": 48.50419648503189,
+  "spec_l2_err": 0.0,
+  "elapsed_s": 0.15539193153381348,
+  "note": "closed-loop sanity with spectral metrics"
+}
