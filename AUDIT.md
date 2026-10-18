@@ -82,7 +82,7 @@ Copied byte-for-byte from the monorepo paths below (this is what makes the repo 
 - `REPORT_NEW_RELATIONSHIPS10.md`, `REPORT_NEW_RELATIONSHIPS11.md`, `REPORT_NEW_RELATIONSHIPS12.md` — relocated from `general_two_clocks/`; run/test commands and in-text module paths made repo-root-relative; the `CROSS_RELATIONSHIPS_INDEX.md` link now points at the monorepo archive, since the index is deliberately not copied into any split.
 - `tests/test_new_relationships11.py`, `tests/test_new_relationships12.py` — relocated from `general_two_clocks/tests/`; docstring and `sys.path` monorepo segments dropped. (`tests/test_new_relationships10.py` is a byte-identical copy, so it appears under *Vendored files*.)
 - `GETTING_STARTED.md` — adapted from `glaciers/GETTING_STARTED.md`: run commands and paths made repo-root-relative; the theory-side pointers (`REPORT_CLOSURE.md`, `REPORT_THEORY.md`, `run_closure.py`) now link to `K1-two-clocks-theory`.
-- `README.md`, `AUDIT.md`, `validation/REAL_DATA_RESULTS.md` — NR33–NR35 relocation noted; test counts updated (39 modules; `414 passed, 16 skipped`); canonical archive SHA; `K-audit` v1.0 reference.
+- `README.md`, `AUDIT.md`, `validation/REAL_DATA_RESULTS.md` — NR33–NR35 relocation noted; test counts updated (39 modules; `422 passed, 8 skipped` in CI); canonical archive SHA; `K-audit` v1.0 reference.
 
 ## Excluded files
 
