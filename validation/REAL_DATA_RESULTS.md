@@ -239,8 +239,8 @@ systematic (colder ice raises `N_max` only as `A^(−1/3)`).
 Reproduce: `python validation/external/rtn_spec_sign_pin.py --vel-nc
 <NSIDC-0754 nc>` (data: USAP-DC 601371 + 601470, Bedmap2 bin, NSIDC-0754 via
 earthaccess). Artifacts: `validation/reports/rtn_spec_sign_pin.{json,png}`.
-Unit-proofs: `glaciers/tests/test_rtn_spec_sign_pin.py` (10) +
-`general_two_clocks/tests/test_new_relationships10.py` (8, NR33).
+Unit-proofs: `tests/test_rtn_spec_sign_pin.py` (10) +
+`tests/test_new_relationships10.py` (8, NR33).
 
 ### §V.1e the specularity gauge in metres — Kirchhoff inversion, zero parameters
 

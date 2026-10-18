@@ -64,6 +64,15 @@ Provenance).
   φ-area inversion (RESULT 18, [`REPORT_RTN_PHI_INVERSION.md`](REPORT_RTN_PHI_INVERSION.md)),
   hydrology-corrected MISI band (RESULT 19), intrusion-clock driver
   (RESULT 20, [`REPORT_RTN_INTRUSION_CLOCK.md`](REPORT_RTN_INTRUSION_CLOCK.md)).
+- **[VERIFIED + DERIVED — relocated from K1]** the persistence family NR33–NR35
+  (moved here from the theory cluster, since their data applications read this
+  repo's validation code): repeat-radar persistence of distributed water is a
+  **pressure gauge** (`N ≤ 3.5 bar` at 4 yr; the 7 persistent-specular ICECAP
+  cells satisfy `φ ≥ 0.98` — [`REPORT_NEW_RELATIONSHIPS10.md`](REPORT_NEW_RELATIONSHIPS10.md));
+  the ice-side interface kernel **is** an exact tempered half-order fractional
+  derivative ([`REPORT_NEW_RELATIONSHIPS11.md`](REPORT_NEW_RELATIONSHIPS11.md));
+  and the bracket is two-sided with a dated melt correction
+  ([`REPORT_NEW_RELATIONSHIPS12.md`](REPORT_NEW_RELATIONSHIPS12.md)).
 - Also in this cluster: tidal-admittance and temporal-CSD field analyses
   ([`REPORT_TIDAL_ADMITTANCE_FIELD.md`](REPORT_TIDAL_ADMITTANCE_FIELD.md),
   [`REPORT_TEMPORAL_CSD_FIELD.md`](REPORT_TEMPORAL_CSD_FIELD.md)), the
@@ -94,7 +103,10 @@ Provenance).
   (`validation/external/tide_loader.py`).
 - §H.3 CMN correction inside a *real* ice-sheet model (ISSM/GlaDS) — the
   synthetic-solver half is done.
-- GPU re-runs of the full CuPy family on a CUDA device.
+- GPU re-runs of the full CuPy family on a CUDA device. The GPU backend
+  verification harness `gpu_family_sweep.py` spans this cluster, K3 and K5 and
+  is preserved in the monorepo archive
+  ([`glaciers/gpu_family_sweep.py`](https://github.com/abdh0saifelden2-debug/K/blob/main/glaciers/gpu_family_sweep.py)).
 
 ## Contents
 
@@ -106,10 +118,17 @@ Provenance).
   `external/` real-data loaders + runners, `reports/`, `REAL_DATA_RESULTS.md`.
 - `closure/`, `compressible/` — vendored leaf solver dependencies from the theory
   cluster, so this repo imports cleanly on its own (see `AUDIT.md`).
+- NR33–NR35 chains (relocated from the theory cluster): `new_relationships10.py`,
+  `new_relationships11.py`, `new_relationships12.py`, reports
+  `REPORT_NEW_RELATIONSHIPS10.md`, `REPORT_NEW_RELATIONSHIPS11.md`,
+  `REPORT_NEW_RELATIONSHIPS12.md`, figures `figures/nr33_*`, `figures/nr34_*`,
+  `figures/nr35_*`.
+- `GETTING_STARTED.md` — 15-minute tutorial: plug the closure into a
+  GlaDS/Röthlisberger model and watch the post-drainage surge lag appear.
 - Runners: `run_subglacial.py`, `run_subglacial3d.py`, `run_candidate1.py`,
   `run_candidate4.py`, `run_stefan_sweep.py`.
 - `figures/` — Figs 31–38, 49–52, 56–59 + candidate JSONs.
-- `tests/` — 36 test modules.
+- `tests/` — 39 test modules.
 
 ## Quick start
 
@@ -118,7 +137,7 @@ python3 -m venv .venv && . .venv/bin/activate
 pip install -r requirements.txt
 python run_subglacial.py --bed real --out-dir figures
 python validation/external/run_rtn_bedmap2.py --stride 3 --phi 0.9
-python -m pytest            # 394 passed, 6 skipped
+python -m pytest            # 414 passed, 16 skipped
 ```
 
 ## Provenance
@@ -135,13 +154,12 @@ Split out of the **K** monorepo, partitioned by claim cluster:
 
 The pristine monorepo was snapshotted **before** any edit:
 `K-monorepo-archive.tar.gz`, SHA-256
-`3c30c68b4d4287787af00539b2cbe75a47dc0536491ec0d1b17a0f61d80b5304`
+`ef637ff55f912a5d1404f677429f9429eccc8102a8cab23cee79cf055bbf1220`
 (`K-monorepo-archive.sha256`). The cross-repo claim ledger (`FUTURE_WORK.md`)
 and paper outline are deliberately **not** copied here — they live only in that
 archive. [`AUDIT.md`](AUDIT.md) records the full split audit: every vendored
-file, every edit, and the AST verification result.
-
-echo "done" 2>&1 | tail -1
+file, every edit, and the AST verification result (reproduce it with
+[`K-audit` v1.0](https://github.com/abdh0saifelden2-debug/K-audit/tree/v1.0)).
 
 ## TODO (future)
 - (6) A-posteriori closed-loop LES benchmark (projected-FDT vs Smagorinsky vs filtered DNS)
