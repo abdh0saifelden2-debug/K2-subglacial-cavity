@@ -241,6 +241,14 @@ Reproduce: `python validation/external/rtn_spec_sign_pin.py --vel-nc
 earthaccess). Artifacts: `validation/reports/rtn_spec_sign_pin.{json,png}`.
 Unit-proofs: `tests/test_rtn_spec_sign_pin.py` (10) +
 `tests/test_new_relationships10.py` (8, NR33).
+Claim-level reproduction (2026-10-19, Kaggle kernel `abduk5/k2-nr33-reproduction`,
+K2 commit `12b6840`, USAP-DC 601371 profiles + Bedmap2): `python
+new_relationships10.py` regenerates the archived figures JSON **byte-identically**
+(sha256 `30ab52166fd7adf83d7f9d7f8d1393f39d47562b6ca5f04faa58e76962cdb727`) —
+N_max(4 yr) = 3.5452989016439767 bar, φ_floor = 0.9803/0.9869/0.9901 at H =
+2/3/4 km, 259 cells seen in both epochs, 7 persistent, median φ_floor
+0.9898373560952022 (median H 3878 m). Kernel log + result JSON:
+`abduk5/k2-nr33-reproduction` (private).
 
 ### §V.1e the specularity gauge in metres — Kirchhoff inversion, zero parameters
 
